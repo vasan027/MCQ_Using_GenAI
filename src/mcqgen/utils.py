@@ -39,6 +39,9 @@ def get_table_data(quiz_str):
             )
             correct = value["correct"]
             quiz_tabledata.append({"MCQ": mcq, "Options": options, "Answer": correct})
+            
+        
+        print(quiz_tabledata)
 
         return quiz_tabledata
 
