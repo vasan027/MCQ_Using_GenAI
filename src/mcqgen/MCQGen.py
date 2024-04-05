@@ -27,7 +27,7 @@ Ensure to make {number} MCQs
 """
 
 qn_generation_prompt = PromptTemplate(
-    input_variables=["text", "number", "subject", "tone", ""],
+    input_variables=["text", "number", "subject", "tone", "response_json"],
     template=TEMPLATE,
 )
 
