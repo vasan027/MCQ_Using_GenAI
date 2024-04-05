@@ -48,18 +48,18 @@ with st.form("user_inputs"):
 
             else:
                 if isinstance(response, dict):
+                    # Extract the quiz data from the response
                     quiz = response.get("quiz", None)
-
                     if quiz is not None:
-                        td = get_table_data(quiz)
-                        if td is not None:
-                            df = pd.DataFrame(td)
+                        table_data = get_table_data(quiz)
+                        if table_data is not None:
+                            df = pd.DataFrame(table_data)
                             df.index = df.index + 1
                             st.table(df)
+                            # Display the review in atext box as well
                             st.text_area(label="Review", value=response["review"])
-
                         else:
-                            st.error("Error in table data")
+                            st.error("Error in the table data")
 
                     else:
                         st.write("response")
